@@ -1,0 +1,57 @@
+<% layout('layouts/boilerplate')%>
+    <h1 class="text-center">
+        <%=shelter.shelterName%>
+    </h1>
+    <h1 class="text-center">All Adoptable Pet</h1>
+
+    <div class="container text-end">
+        <div class="row mb-3">
+            <div class="col-3">
+                <a href="/shelter/<%=shelter._id%>" class="btn btn-sm bg-light">Return Shelter</a>
+            </div>
+            <% if(currentUser && shelter.owner.equals(currentUser._id)) {%>
+                <div class="col-3 mb-3">
+                    <a class="card-link btn btn-sm btn-primary" href="/shelter/<%=shelter._id%>/petAdoption/new">Add A
+                        Pet</a>
+                </div>
+                <%}%>
+        </div>
+    </div>
+
+    <% for(let pet of shelter.adoptablePet) { %>
+        <div class="card mb-3 ">
+            <div class="row">
+                <div class="col-4 m-3">
+                    <img src="<%= pet.image[0].url%>" class="card-img-top, img-fluid" alt="Pet Image">
+                </div>
+
+                <div class="col-6">
+                    <div class="card-header text-center">
+                        <strong>
+                            <%= pet.petname %>
+                        </strong> (<%=pet.size%>
+                            <%= pet.typeOfPet %> | <%=pet.gender%>)
+                    </div>
+
+                    <div class="card-header">Description:<%=pet.description%>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <a class="btn btn-sm btn-primary" href="/petAdoption/<%=pet._id%>">View Detail</a>
+                        </div>
+
+                        <% if(currentUser && shelter.owner.equals(currentUser._id)) {%>
+                            <form action="/shelter/<%=shelter._id%>/petAdoption/<%=pet._id%>?_method=DELETE"
+                                method="POST">
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                            <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+            <div class="row my-3">
+                <a href="/shelter/<%=shelter._id%>" class="btn btn-sm bg-light">Return Shelter</a>
+            </div>

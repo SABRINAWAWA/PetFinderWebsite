@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+body{
+    background-image:linear-gradient(#f3ffbd8c, #b2dbbf8c, #70c1b496, #247ba085);
+    background-size: cover;
+    background-position: center;
+}
+
+.heading{
+    color:#1d3557;
+    font-size: 2.5rem;
+    font-weight: 3rem;
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+.card-header-collapse{
+    text-decoration: none;
+    font-size: large;
+    font-weight: 3rem;
+    font-family: 'Yusei Magic', sans-serif;
+}

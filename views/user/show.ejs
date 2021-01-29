@@ -1,0 +1,241 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <div class="col-4 mb-3">
+            <div class="card mb-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        <%=user.username%>'s Profile
+                    </h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Email: <%=user.UniEmail%>
+                    </li>
+                    <li class="list-group-item">City: <%=user.userCity%>
+                    </li>
+                    <li class="list-group-item">State: <%=user.userState%>
+                    </li>
+                    <li class="list-group-item">ZIP Code: <%=user.userZIP%>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header text-center">
+                    <h1>Menu</h1>
+                </div>
+                <div class="card-body text-center">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#shelterlink">Shelters</a>
+                        </li>
+                        <li class="list-group-item"><a href="#lostpetlink">Lost Pet Posts</a>
+                        </li>
+                        <li class="list-group-item"><a href="#adoptpetlink">Adopt Pet Post</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-8 mb-3">
+            <%if(user.shelter&&user.shelter!==undefined&&user.shelter!==null){%>
+
+                <div id="shelterlink">
+                    <h1 class="text-center">Shelter</h1>
+                </div>
+                <div class="card" style="max-width: 600px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="<%=user.shelter.shelterImage[0].thumbnail%>" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    <%=user.shelter.shelterName%>
+                                </h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Location: <%=user.shelter.shelterLocation%>
+                                    </li>
+                                    <li class="list-group-item">Email: <%=user.shelter.shelterEmail%>
+                                    </li>
+                                    <li class="list-group-item">Phone: <%=user.shelter.shelterPhone%>
+                                    </li>
+                                    <li class="list-group-item">Numbers of Adaptable Pet:
+                                        <%=user.shelter.adoptablePet.length%>
+                                    </li>
+                                    <li class="list-group-item">Description: <%=user.shelter.shelterDescription%>
+                                    </li>
+                                </ul>
+                                <div class="card-footer">
+                                    <a class="card-link btn btn-primary"
+                                        href="/shelter/<%=user.shelter._id%>/edit">Edit</a>
+                                    <form class="d-inline" action="/shelter/<%=user.shelter._id%>?_method=DELETE"
+                                        method="POST">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <%}%>
+
+
+                    <%if(user.lostPet&&user.lostPet!==undefined&&user.lostPet!==null&&user.lostPet.length){%>
+                        <div id="lostpetlink">
+                            <%let length=user.lostPet.length%>
+                                <h1 class="text-center">Lost Pet Posts<span class="badge badge-info">
+                                        <%=length%>
+                                    </span></h1>
+                        </div>
+                        <%for (let lostPet of user.lostPet){%>
+                            <div class="card mb-3" style="max-width: 600px;">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center">
+                                                <strong>
+                                                    <%=lostPet.petname%>
+                                                </strong> - <%=lostPet.gender%>
+                                                    <%=lostPet.typeOfPet%>
+                                            </h5>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Age: <%=lostPet.age%> year-old
+                                                </li>
+                                                <li class="list-group-item">Size: <%=lostPet.size%>
+                                                </li>
+                                                <li class="list-group-item">Location: <%=lostPet.city%>,
+                                                        <%=lostPet.state%>
+                                                </li>
+                                                <li class="list-group-item">Lost Date: <%=lostPet.lostDate%>
+                                                </li>
+                                                <li class="list-group-item">Description: <%=lostPet.description%>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4 my-3">
+                                        <a class="card-link btn btn-primary"
+                                            href="/petfinder/<%=user.lostPet._id%>/edit">Edit</a>
+                                        <form class="d-inline" action="/petfinder/<%=user.lostPet._id%>?_method=DELETE"
+                                            method="POST">
+                                            <button class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <%}%>
+                                <hr>
+                                <%}%>
+
+
+
+                                    <%if(user.petadoption&&user.petadoption!==undefined&&user.petadoption!==null&&user.petadoption.length){%>
+                                        <div id="adoptpetlink">
+                                            <%let length=user.petadoption.length%>
+                                                <h1 class="text-center">Adoptable Pet Posts<span
+                                                        class="badge badge-info">
+                                                        <%=length%>
+                                                    </span></h1>
+                                        </div>
+                                        <%for (let adoptPet of user.petadoption){%>
+                                            <div class="card mb-3 text-center" style="max-width: 600px;">
+                                                <div class="row g-0">
+                                                    <div class="col-md-12">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title text-center">
+                                                                <strong>
+                                                                    <%=adoptPet.petname%>
+                                                                </strong> - <%=adoptPet.gender%>
+                                                                    <%=adoptPet.typeOfPet%>
+                                                            </h5>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item">Age: <%=adoptPet.age%>
+                                                                        year-old
+                                                                </li>
+                                                                <li class="list-group-item">Size: <%=adoptPet.size%>
+                                                                </li>
+                                                                <li class="list-group-item">Location: <%=adoptPet.city%>
+                                                                        ,
+                                                                        <%=adoptPet.state%>
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <strong>Description:</strong>
+                                                                    <%=adoptPet.description%>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12 mb-3 text-center">
+                                                        <a class="card-link btn btn-primary"
+                                                            href="/petAdoption/<%=adoptPet._id%>/edit">Edit</a>
+                                                        <%if (adoptPet.shelterName!==undefined) {%>
+                                                            <form class="d-inline"
+                                                                action="/shelter/<%=adoptPet.shelterName._id%>/petAdoption/<%=adoptPet._id%>?_method=DELETE"
+                                                                method="POST">
+                                                                <button class="btn btn-danger">Delete</button>
+                                                            </form>
+
+                                                            <%}else{%>
+                                                                <form class="d-inline"
+                                                                    action="/petAdoption/<%=adoptPet._id%>?_method=DELETE"
+                                                                    method="POST">
+                                                                    <button class="btn btn-danger">Delete</button>
+                                                                </form>
+                                                                <%}%>
+                                                    </div>
+                                                </div>
+
+
+                                                <%if (adoptPet.customer.length){%>
+                                                    <div class="col-md-12 my-3">
+                                                        <div class="card" style="max-width: 600px;">
+                                                            <%let length=adoptPet.customer.length%>
+                                                                <div class="card-header text-center">
+                                                                    <h3>Contact-list <span class="badge badge-info">
+                                                                            <%=length%>
+                                                                        </span></h3>
+                                                                </div>
+                                                                <%for (let customer of adoptPet.customer){%>
+                                                                    <div class="card">
+                                                                        <div class="card-body">
+                                                                            <h5 class="card-title">Username:
+                                                                                <%=customer.author.username%>
+                                                                            </h5>
+                                                                            <ul class="list-group list-group-flush">
+                                                                                <li class="list-group-item"> Email:
+                                                                                    <%=customer.author.UniEmail%>
+                                                                                </li>
+                                                                                <li class="list-group-item">Location:
+                                                                                    <%=customer.author.userCity%>,
+                                                                                        <%=customer.author.userState%>,
+                                                                                            ZIP
+                                                                                            <%=customer.author.userZIP%>
+                                                                                </li>
+                                                                            </ul>
+                                                                            <p class="card-text">
+                                                                                <strong>Message:</strong>
+                                                                                <%=customer.message%>
+                                                                            </p>
+                                                                            <form class="d-inline"
+                                                                                action="/petAdoption/<%=adoptPet._id%>/customers/<%=customer._id%>?_method=DELETE"
+                                                                                method="POST">
+                                                                                <button
+                                                                                    class="btn btn-danger">Delete</button>
+                                                                            </form>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <%}%>
+
+                                                        </div>
+                                                    </div>
+                                                    <%}%>
+                                            </div>
+
+                                            <%}%>
+                                                <%}%>
+        </div>
+    </div>

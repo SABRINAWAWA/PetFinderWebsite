@@ -1,0 +1,27 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-warning text-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">PetFinder&Adoption</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/petfinder">Find Lost Pet</a>
+                <a class="nav-link" href="/petfinder/new">Post Lost Pet</a>
+                <a class="nav-link" href="/petAdoption">Adopt A Pet</a>
+                <a class="nav-link" href="/petAdoption/new">Add New Pet</a>
+                <a class="nav-link" href="/shelter">Shelters</a>
+                <div class="navbar-nav">
+                    <% if(!currentUser) {%>
+                        <a class="nav-link" href="/login">Login</a>
+                        <%}else{%>
+                            <a class="nav-link" href="/userprofile">User Profile</a>
+                            <a class="nav-link" href="/logout">Logout</a>
+                            <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

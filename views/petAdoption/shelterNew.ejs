@@ -1,0 +1,165 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h1 class="text-center"> <%=shelter.shelterName%></h1>
+            <h3 class="text-center">New Pet</h3>
+            <form action="/shelter/<%=shelter._id%>/petAdoption/new" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label class="form-label" for="petname">Pet Name: </label>
+                    <input class="form-control" type="text" id="petname" name="petadopt[petname]"
+                        placeholder="Enter Name" required>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                        <label class="form-label" for="city">City:</label>
+                        <input class="form-control" type="text" id="city" name="petadopt[city]" placeholder="Enter City"
+                            required>
+                    </div>
+                    <div class="col mb-3">
+                        <label for="state" class="form-label">State:</label>
+                        <select id="state" class="form-select" name="petadopt[state]" required>
+                        <% for (let state of states) {%>
+                            <option value="<%=state%>">
+                            <%=state%>
+                                </option>
+                                <% }%>
+                        </select>
+                    </div>
+                </div>
+
+                <hr>
+                <h5 class="text-center">Pet Infromation </h5>
+                <div class="row">
+                    <div class="col mb-3">
+                        <label class="form-label" for="age">Age: </label>
+                        <select class="form-select" name="petadopt[age]" id="age" required>
+                            <% for (let i=0; i<=25; i++) {%>
+                                <option value="<%=i%>">
+                                    <%=i%>
+                                </option>
+                                <% }%>
+                        </select>
+                    </div>
+
+                    <div class="col mb-3">
+                        <label class="form-label" for="gender">Gender: </label>
+                        <select class="form-select" name="petadopt[gender]" id="gender" required>
+                            <% for (let gender of genders) {%>
+                                <option value="<%=gender%>">
+                                    <%=gender%>
+                                </option>
+                                <% }%>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                        <label class="form-label" for="size">Size: </label>
+                        <select class="form-select" name="petadopt[size]" id="size" required>
+                            <% for (let size of sizes) {%>
+                                <option value="<%=size%>">
+                                    <%=size%>
+                                </option>
+                                <% }%>
+                        </select>
+                    </div>
+
+                    <div class="col mb-3">
+                        <label class="form-label" for="typeOfPet">Type: </label>
+                        <select class="form-select" name="petadopt[typeOfPet]" id="typeOfPet" required>
+                            <% for (let type of typeOfPet) {%>
+                                <option value="<%=type%>">
+                                    <%=type%>
+                                </option>
+                                <% }%>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mx-3 mb-3">
+                    <label class="form-label" for="dogBreeds">Choose Dog Breeds: (optional)</label>
+                    <select class="form-select" name="petadopt[dogBreeds]" id="dogBreeds" required>
+                        <% for (let dbreed of dogbreeds) {%>
+                            <option value="<%=dbreed%>">
+                                <%=dbreed%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="row mx-3 mb-3">
+                    <label class="form-label" for="catBreeds">Choose Cat Breeds: (optional)</label>
+                    <select class="form-select" name="petadopt[catBreeds]" id="catBreeds" required>
+                        <% for (let cbreed of catbreeds) {%>
+                            <option value="<%=cbreed%>">
+                                <%=cbreed%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <h6>Can this pet be adopted immediately?</h6>
+                <div class="row">
+                    <div class="form-check form-check-inline mx-3">
+                        <input class="form-check-input" type="radio" id="isadopt" name="petadopt[isAdoptable]"
+                            value="true">
+                        <label class="form-check-label" for="isadopt">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline mx-3">
+                        <input class="form-check-input" type="radio" id="isadopt" name="petadopt[isAdoptable]"
+                            value="false">
+                        <label class="form-check-label" for="isadopt">No</label>
+                    </div>
+                </div>
+
+                <h6>Does this pet require special cares?</h6>
+                <div class="row">
+                    <div class="form-check form-check-inline mx-3">
+                        <input class="form-check-input" type="radio" id="needsSpecialCare"
+                            name="petadopt[needsSpecialCare]" value="true">
+                        <label class="form-check-label" for="needsSpecialCare">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline mx-3">
+                        <input class="form-check-input" type="radio" id="needsSpecialCare"
+                            name="petadopt[needsSpecialCare]" value="false">
+                        <label class="form-check-label" for="needsSpecialCare">No</label>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="mb-3">
+                    <label class="form-label" for="description"><strong>Description: </strong>(If pet type is others,
+                        please specify the type of pet below. Also, if this pet require special care, please specify types of care or
+                        services below.)</label>
+                    <textarea rows="10" style="height:100%;" class="form-control" type="text" id="description"
+                        name="petadopt[description]"
+                        placeholder="Please enter details of this pet, such as personality, habits, or favorite foods."
+                        required></textarea>
+                </div>
+
+                <hr>
+                <div class="mb-3">
+                    <label for="image">Upload Image(s)</label>
+                    <div class="form-file custom-file">
+                        <input type="file" class="form-file-input" id="image" name="image" multiple>
+                        <label class="form-file-label" for="image">
+                            <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                            <span class="form-file-button">Browse</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col text-center mb-3">
+                    <button class="btn-info align-middle">Add New Pet</button>
+                </div>
+            </form>
+
+            <div class="col mb-5">
+                <p class="text-center">Please Enter Above Information Carefully.</p>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,162 @@
+<% layout('layouts/boilerplate')%>
+
+    <h1 class="heading text-center">All Lost Pets</h1>
+    <h1 class="heading text-center">In <%=state%></h1>
+
+    <div class="row">
+        <div class="row offset-8 mb-3">
+            <a href="/petfinder" class="btn btn-warning mx-3">All Lost Pets</a>
+            <a href="/petfinder/new" class="btn btn-warning">Post Your Lost Pet</a>
+        </div>
+    </div>
+
+    <div class="row justify-content-center text-center px-auto mb-3">
+        <div id="accordion">
+            <div class="card" style="max-width: 35rem;">
+                <div class="card-header-collapse" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Search by Types of Pets
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="/petfinder?typeOfPet=dog" class="btn btn-light btn-sm mx-3">Dog</a>
+                                <a href="/petfinder?typeOfPet=cat" class="btn btn-light btn-sm mx-3">Cat</a>
+                                <a href="/petfinder?typeOfPet=other" class="btn btn-light btn-sm mx-3">Other</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="max-width: 35rem;">
+                <div class="card-header-collapse" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-info btn-block collapsed" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Search by States
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="/petfinder?state=Alabama" class="btn btn-light btn-sm mx-3">Alabama</a>
+                                <a href="/petfinder?state=Alaska" class="btn btn-light btn-sm mx-3">Alaska</a>
+                                <a href="/petfinder?state=Arizona" class="btn btn-light btn-sm mx-3">Arizona</a>
+                                <a href="/petfinder?state=Arkansas" class="btn btn-light btn-sm mx-3">Arkansas</a>
+                                <a href="/petfinder?state=California" class="btn btn-light btn-sm mx-3">California</a>
+                                <a href="/petfinder?state=Colorado" class="btn btn-light btn-sm mx-3">Colorado</a>
+                                <a href="/petfinder?state=Connecticut" class="btn btn-light btn-sm mx-3">Connecticut</a>
+                                <a href="/petfinder?state=Delaware" class="btn btn-light btn-sm mx-3">Delaware</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petfinder?state=Florida" class="btn btn-light btn-sm mx-3">Florida</a>
+                                <a href="/petfinder?state=Georgia" class="btn btn-light btn-sm mx-3">Georgia</a>
+                                <a href="/petfinder?state=Hawaii" class="btn btn-light btn-sm mx-3">Hawaii</a>
+                                <a href="/petfinder?state=Idaho" class="btn btn-light btn-sm mx-3">Idaho</a>
+                                <a href="/petfinder?state=Illinois" class="btn btn-light btn-sm mx-3">Illinois</a>
+                                <a href="/petfinder?state=Indiana" class="btn btn-light btn-sm mx-3">Indiana</a>
+                                <a href="/petfinder?state=Iowa" class="btn btn-light btn-sm mx-3">Iowa</a>
+                                <a href="/petfinder?state=Kansas" class="btn btn-light btn-sm mx-3">Kansas</a>
+                                <a href="/petfinder?state=Kentucky" class="btn btn-light btn-sm mx-3">Kentucky</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petfinder?state=Louisiana" class="btn btn-light btn-sm mx-3">Louisiana</a>
+                                <a href="/petfinder?state=Maine" class="btn btn-light btn-sm mx-3">Maine</a>
+                                <a href="/petfinder?state=Maryland" class="btn btn-light btn-sm mx-3">Maryland</a>
+                                <a href="/petfinder?state=Massachusetts"
+                                    class="btn btn-light btn-sm mx-3">Massachusetts</a>
+                                <a href="/petfinder?state=Michigan" class="btn btn-light btn-sm mx-3">Michigan</a>
+                                <a href="/petfinder?state=Minnesota" class="btn btn-light btn-sm mx-3">Minnesota</a>
+                                <a href="/petfinder?state=Mississippi" class="btn btn-light btn-sm mx-3">Mississippi</a>
+                                <a href="/petfinder?state=Missouri" class="btn btn-light btn-sm mx-3">Missouri</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petfinder?state=Montana" class="btn btn-light btn-sm mx-3">Montana</a>
+                                <a href="/petfinder?state=Nebraska" class="btn btn-light btn-sm mx-3">Nebraska</a>
+                                <a href="/petfinder?state=Nevada" class="btn btn-light btn-sm mx-3">Nevada</a>
+                                <a href="/petfinder?state=New_Hampshire" class="btn btn-light btn-sm mx-3">New
+                                    Hampshire</a>
+                                <a href="/petfinder?state=New_Jersey" class="btn btn-light btn-sm mx-3">New Jersey</a>
+                                <a href="/petfinder?state=New_Mexico" class="btn btn-light btn-sm mx-3">New Mexico</a>
+                                <a href="/petfinder?state=New_York" class="btn btn-light btn-sm mx-3">New York</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petfinder?state=North_Carolina" class="btn btn-light btn-sm mx-3">North
+                                    Carolina</a>
+                                <a href="/petfinder?state=North Dakota" class="btn btn-light btn-sm mx-3">North
+                                    Dakota</a>
+                                <a href="/petfinder?state=Ohio" class="btn btn-light btn-sm mx-3">Ohio</a>
+                                <a href="/petfinder?state=Oklahoma" class="btn btn-light btn-sm mx-3">Oklahoma</a>
+                                <a href="/petfinder?state=Oregon" class="btn btn-light btn-sm mx-3">Oregon</a>
+                                <a href="/petfinder?state=Pennsylvania"
+                                    class="btn btn-light btn-sm mx-3">Pennsylvania</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petfinder?state=Rhode_Island" class="btn btn-light btn-sm mx-3">Rhode
+                                    Island</a>
+                                <a href="/petfinder?state=South_Carolina" class="btn btn-light btn-sm mx-3">South
+                                    Carolina</a>
+                                <a href="/petfinder?state=South_Dakota" class="btn btn-light btn-sm mx-3">South
+                                    Dakota</a>
+                                <a href="/petfinder?state=Tennessee" class="btn btn-light btn-sm mx-3">Tennessee</a>
+                                <a href="/petfinder?state=Texas" class="btn btn-light btn-sm mx-3">Texas</a>
+                                <a href="/petfinder?state=Utah" class="btn btn-light btn-sm mx-3">Utah</a>
+                                <a href="/petfinder?state=Vermont" class="btn btn-light btn-sm mx-3">Vermont</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petfinder?state=Virginia" class="btn btn-light btn-sm mx-3">Virginia</a>
+                                <a href="/petfinder?state=Washington" class="btn btn-light btn-sm mx-3">Washington</a>
+                                <a href="/petfinder?state=West_Virginia" class="btn btn-light btn-sm mx-3">West
+                                    Virginia</a>
+                                <a href="/petfinder?state=Wisconsin" class="btn btn-light btn-sm mx-3">Wisconsin</a>
+                                <a href="/petfinder?state=Wyoming" class="btn btn-light btn-sm mx-3">Wyoming</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <%for (let pet of pets){%>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <%if (pet.image.length) {%>
+                        <img src="<%=pet.image[0].url%>" class="img-fluid">
+                        <%}else{%>
+                            <h1 class="text-center">No Image Uploaded</h1>
+                            <%}%>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5>
+                            <%= pet.petname%>
+                        </h5>
+                        <p class="card-text">Lived in <%= pet.city%>, <%=pet.state%><br>
+                                    Lost at <%= pet.lostDate%>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= pet.description %>
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/petfinder/<%=pet._id%>">View Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+
+        <div class="card-header text-center mb-3">
+            <p>You can search pets according to type of your pet or states.</p>
+        </div>
