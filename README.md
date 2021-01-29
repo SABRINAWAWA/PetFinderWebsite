@@ -1,4 +1,4 @@
 # PetFinderWebsite
 # Website Feature Walkthrough
 1. Home Page
-<img src="https://imgur.com/C3CI90U" width=200><br>
+<img src="PetFinder-Home.gif" width=200><br>
