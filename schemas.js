@@ -23,7 +23,7 @@
 
 // const Joi=BaseJoi.extend(extension);
 
-const Joi=require("Joi");
+const Joi=require("joi");
 module.exports.petfinderSchema = Joi.object({
     pet: Joi.object({
         petname: Joi.string().required(),
