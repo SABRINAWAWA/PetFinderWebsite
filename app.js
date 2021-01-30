@@ -16,8 +16,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require("helmet");
-//process.env.DB_URL||
-const dbUrl='mongodb://localhost:27017/petfinder';
+const dbUrl=process.env.DB_URL||'mongodb://localhost:27017/petfinder';
 const MongoDBStore=require("connect-mongo")(session);
 
 // Requiring schema.
