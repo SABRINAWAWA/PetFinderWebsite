@@ -1,5 +1,6 @@
 # [PetFinderWebsite](https://mysterious-plateau-38458.herokuapp.com/)
 ### Click above title to the website application, which is deployed in Heroku.
+### Check out all codes in 'master' branch (Github)
 # Website Feature Walkthrough
 # 1. Home Page
 ### Home page contains some information about lost pets, adoptable pets and shelters. It also includes links to other sub-pages.
