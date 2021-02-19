@@ -1,0 +1,75 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        
+        <div class="col-8 offset-2">
+            <h1 class="text-center"> Edit Shelter</h1>
+            <form action="/shelter/<%=shelter._id%>?_method=PUT" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label class="form-label" for="name">Shelter Name: </label>
+                    <input class="form-control" type="text" id="name" name="shelter[shelterName]"
+                        value="<%=shelter.shelterName%>" required>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                        <label class="form-label" for="location">Location: </label>
+                        <input class="form-control" type="text" id="location" name="shelter[shelterLocation]"
+                            value="<%=shelter.shelterLocation%>" required>
+                    </div>
+                    <div class="col mb-3">
+                        <label class="form-label" for="email">Email: </label>
+                        <input type="email" class="form-select" name="shelter[shelterEmail]" id=" email"
+                            value="<%=shelter.shelterEmail%>" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                        <label class="form-label" for="shelterPhone">Phone: </label>
+                        <input class="form-control" type="text" id="shelterPhone" name="shelter[shelterPhone]"
+                            value="<%=shelter.shelterPhone%>" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                        <label class="form-label" for="description">Description: </label>
+                        <textarea rows="10" style="height:85%;" class="form-control" type="text" id="description"
+                            name="shelter[shelterDescription]" required><%=shelter.shelterDescription%></textarea>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image">Upload Image(s)</label>
+                    <div class="form-file custom-file">
+                        <input type="file" class="form-file-input" id="image" name="image" multiple>
+                        <label class="form-file-label" for="image">
+                            <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                            <span class="form-file-button">Browse</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <% shelter.shelterImage.forEach(function(img, i) { %>
+                        <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                        </div>
+                        <label for="image-<%=i%>">Delete?</label>
+                        <% })%>
+                </div>
+
+                <div class="col text-center mb-3">
+                    <button class="btn-info align-middle">Update Shelter</button>
+                </div>
+            </form>
+
+
+
+            <div class="col mb-5">
+                <p class="text-center">Please Enter Above Information Carefully.</p>
+            </div>
+        </div>
+    </div>

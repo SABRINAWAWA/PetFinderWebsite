@@ -1,0 +1,102 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h1 class="heading text-center">New Lost Pet</h1>
+            <form action="/petfinder" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="petname">Name: </label>
+                    <input class="form-control" type="text" id="petname" name="pet[petname]"
+                        placeholder="Enter Name of Your Pet" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="age">Age: </label>
+                    <select class="form-select" name="pet[age]" id="age" required>
+                        <% for (let i=0; i<=25; i++) {%>
+                            <option value="<%=i%>">
+                                <%=i%>
+                            </option>
+                            <% }%>
+                    </select>
+                    <select class="form-select" name="pet[typeOfPet]" id="typeOfPet" required>
+                        <% for (let type of typeOfPet) {%>
+                            <option value="<%=type%>">
+                                <%=type%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <h6 for="city">Location: </h6>
+                    <label class="form-label" for="city">City</label>
+                    <input class="form-control" type="text" id="city" name="pet[city]"
+                        placeholder="Enter Your Current City" required>
+                    <label for="state" class="form-label">State</label>
+                    <select id="state" class="form-select" name="pet[state]" required>
+                        <% for (let state of states) {%>
+                            <option value="<%=state%>">
+                        <%=state%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="lostDate">Lost Date</label>
+                    <input class="form-control" type="date" name="pet[lostDate]" id="lostDate" placeholder="MM/DD/YYYY"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="size">Select Size: </label>
+                    <select class="form-select" name="pet[size]" id="size" required>
+                        <% for (let size of sizes) {%>
+                            <option value="<%=size%>">
+                                <%=size%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="gender">Select Gender: </label>
+                    <select class="form-select" name="pet[gender]" id="gender" required>
+                        <% for (let gender of genders) {%>
+                            <option value="<%=gender%>">
+                                <%=gender%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="pet[description]"
+                        placeholder="Please enter more details of your pet, such as fur color, eye colors or collar."
+                        required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image">Upload Image(s)</label>
+                    <div class="form-file custom-file">
+                        <input type="file" class="form-file-input" id="image" name="image" multiple>
+                        <label class="form-file-label" for="image">
+                            <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                            <span class="form-file-button">Browse</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col text-center mb-3">
+                    <button class="btn-info align-middle">Add New Pet</button>
+                </div>
+            </form>
+
+            <div class="mb-5">
+                <p class="text-center">Please Enter Above Information Carefully.<br>We will contact you when there are
+                    dogs
+                    with matched citerias.</p>
+            </div>
+        </div>
+    </div>

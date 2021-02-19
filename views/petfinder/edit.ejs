@@ -1,0 +1,113 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+
+        <div class="col-6 offset-3">
+            <h1 class="text-center"> Edit Lost Pet</h1>
+            <form action="/petfinder/<%=pet._id%>?_method=PUT" method="POST" class="validated-form" novalidate
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="petname">Name: </label>
+                    <input class="form-control" type="text" id="petname" name="pet[petname]" value="<%=pet.petname%>"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="age">Age: </label>
+                    <select class="form-select" name="pet[age]" id="size" value="<%=pet.size%>" required>
+                        <% for (let i=1; i<=20; i++) {%>
+                            <option value=" <%=i%>" <%=pet.age===i ? 'selected' : '' %>>
+                                <%=i%>
+                            </option>
+                            <% }%>
+                    </select>
+                    <label class="form-label" for="typeOfPet">Type: </label>
+                    <select class="form-select" name="pet[typeOfPet]" id="typeOfPet" required>
+                        <% for (let type of typeOfPet) {%>
+                            <option value="<%=type%>" <%=pet.typeOfPet===type ? 'selected' : '' %>>
+                                <%=type%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <h6 for="city">Location: </h6>
+                    <label class="form-label" for="city">City</label>
+                    <input class="form-control" type="text" id="city" name="pet[city]" value="<%=pet.city%>" required>
+                    <label for=" state" class="form-label">State</label>
+                    <select id="state" class="form-select" name="pet[state]" value="<%=pet.state%>" required>
+                        <% for (let state of states) {%>
+                            <option value="<%=state%>" <%=pet.state===state ? 'selected' : '' %>>
+                                <%=state%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="lostDate">Lost Date</label>
+                    <input class="form-control" type="date" name="pet[lostDate]" id="lostDate" value="<%=pet.lostDate%>"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="size">Select Size: </label>
+                    <select class="form-select" name="pet[size]" id="size" value="<%=pet.size%>" required>
+                        <% for (let size of sizes) {%>
+                            <option value="<%=size%>" <%=pet.size===size ? 'selected' : '' %>> <%=size%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="gender">Select Gender: </label>
+                    <select class="form-select" name="pet[gender]" id="gender" value="<%=pet.gender%>" required>
+                        <% for (let gender of genders) {%>
+                            <option value="<%=gender%>" <%=pet.gender===gender ? 'selected' : '' %>> <%=gender%>
+                            </option>
+                            <% }%>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="pet[description]"
+                        required><%=pet.description%></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-file custom-file">
+                        <label class="form-file-label" for="image">Add More Images: </label>
+                        <input type="file" class="form-file-input" id="image" name="image" multiple>
+                        <label class="form-file-label" for="image">
+                            <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                            <span class="form-file-button">Browse</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <% pet.image.forEach(function(img, i) { %>
+                        <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                        </div>
+                        <label for="image-<%=i%>">Delete?</label>
+                        <% })%>
+                </div>
+
+                <div class="col text-center mb-3">
+                    <button class="btn-info align-middle">Update Pet Info</button>
+                </div>
+
+                <div class="mb-5">
+                    <p class="text-center">Please Edit Above Information Carefully.<br>We will contact you when there
+                        are dogs
+                        with matched citerias.</p>
+                </div>
+            </form>
+        </div>
+
+
+    </div>

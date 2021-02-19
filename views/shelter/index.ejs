@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate')%>
+
+    <h1 class="text-center">Shelter List</h1>
+
+    <div class="row">
+        <div class="row offset-8 mb-3">
+            <a href="/shelter" class="btn btn-warning">All Shelter</a>
+            <a href="/shelter/new" class="btn btn-warning mx-3">Add a New Shelter</a>
+        </div>
+    </div>
+    
+    <%for (let shelter of shelters){%>
+        <div class="card mb-3">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5>
+                        <%= shelter.shelterName%>
+                    </h5>
+                    <p class="card-text">Location: <%= shelter.shelterLocation%>
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted">Email: <%= shelter.shelterEmail %></small>
+                        <br>
+                        <small class="text-muted">Phone Number: <%= shelter.shelterPhone %></small>
+                    </p>
+                    <p class="card-text">
+                        <%= shelter.shelterDescription%>
+                    </p>
+                    <a class="btn btn-primary" href="/shelter/<%=shelter._id%>">View Detail</a>
+                </div>
+            </div>
+        </div>
+        <%}%>
+            <div class="card-header text-center mb-3">
+                <p>You can search pets according to type of your pet or states.</p>
+            </div>

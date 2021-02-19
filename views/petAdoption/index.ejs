@@ -1,0 +1,156 @@
+<% layout('layouts/boilerplate')%>
+    <h1 class="heading text-center">All Adoptable Pets</h1>
+    <h1 class="heading text-center">In <%=state%></h1>
+
+    <div class="row">
+        <div class="row offset-7 mb-3">
+            <a href="/petAdoption" class="btn btn-warning mx-3">All Adoptable Pets</a>
+            <a href="/petAdoption/new" class="btn btn-warning">Post An Adoptable Pet</a>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center px-auto mb-3">
+        <div id="accordion">
+            <div class="card" style="max-width: 35rem;">
+                <div class="card-header-collapse" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Search by Types of Pets
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="/petAdoption?typeOfPet=dog" class="btn btn-light btn-sm mx-3">Dog</a>
+                                <a href="/petAdoption?typeOfPet=cat" class="btn btn-light btn-sm mx-3">Cat</a>
+                                <a href="/petAdoption?typeOfPet=other" class="btn btn-light btn-sm mx-3">Other</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="max-width: 35rem;">
+                <div class="card-header-collapse" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-info btn-block collapsed" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Search by States
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="/petAdoption?state=Alabama" class="btn btn-light btn-sm mx-3">Alabama</a>
+                                <a href="/petAdoption?state=Alaska" class="btn btn-light btn-sm mx-3">Alaska</a>
+                                <a href="/petAdoption?state=Arizona" class="btn btn-light btn-sm mx-3">Arizona</a>
+                                <a href="/petAdoption?state=Arkansas" class="btn btn-light btn-sm mx-3">Arkansas</a>
+                                <a href="/petAdoption?state=California" class="btn btn-light btn-sm mx-3">California</a>
+                                <a href="/petAdoption?state=Colorado" class="btn btn-light btn-sm mx-3">Colorado</a>
+                                <a href="/petAdoption?state=Connecticut" class="btn btn-light btn-sm mx-3">Connecticut</a>
+                                <a href="/petAdoption?state=Delaware" class="btn btn-light btn-sm mx-3">Delaware</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petAdoption?state=Florida" class="btn btn-light btn-sm mx-3">Florida</a>
+                                <a href="/petAdoption?state=Georgia" class="btn btn-light btn-sm mx-3">Georgia</a>
+                                <a href="/petAdoption?state=Hawaii" class="btn btn-light btn-sm mx-3">Hawaii</a>
+                                <a href="/petAdoption?state=Idaho" class="btn btn-light btn-sm mx-3">Idaho</a>
+                                <a href="/petAdoption?state=Illinois" class="btn btn-light btn-sm mx-3">Illinois</a>
+                                <a href="/petAdoption?state=Indiana" class="btn btn-light btn-sm mx-3">Indiana</a>
+                                <a href="/petAdoption?state=Iowa" class="btn btn-light btn-sm mx-3">Iowa</a>
+                                <a href="/petAdoption?state=Kansas" class="btn btn-light btn-sm mx-3">Kansas</a>
+                                <a href="/petAdoption?state=Kentucky" class="btn btn-light btn-sm mx-3">Kentucky</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petAdoption?state=Louisiana" class="btn btn-light btn-sm mx-3">Louisiana</a>
+                                <a href="/petAdoption?state=Maine" class="btn btn-light btn-sm mx-3">Maine</a>
+                                <a href="/petAdoption?state=Maryland" class="btn btn-light btn-sm mx-3">Maryland</a>
+                                <a href="/petAdoption?state=Massachusetts"
+                                    class="btn btn-light btn-sm mx-3">Massachusetts</a>
+                                <a href="/petAdoption?state=Michigan" class="btn btn-light btn-sm mx-3">Michigan</a>
+                                <a href="/petAdoption?state=Minnesota" class="btn btn-light btn-sm mx-3">Minnesota</a>
+                                <a href="/petAdoption?state=Mississippi" class="btn btn-light btn-sm mx-3">Mississippi</a>
+                                <a href="/petAdoption?state=Missouri" class="btn btn-light btn-sm mx-3">Missouri</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petAdoption?state=Montana" class="btn btn-light btn-sm mx-3">Montana</a>
+                                <a href="/petAdoption?state=Nebraska" class="btn btn-light btn-sm mx-3">Nebraska</a>
+                                <a href="/petAdoption?state=Nevada" class="btn btn-light btn-sm mx-3">Nevada</a>
+                                <a href="/petAdoption?state=New_Hampshire" class="btn btn-light btn-sm mx-3">New
+                                    Hampshire</a>
+                                <a href="/petAdoption?state=New_Jersey" class="btn btn-light btn-sm mx-3">New Jersey</a>
+                                <a href="/petAdoption?state=New_Mexico" class="btn btn-light btn-sm mx-3">New Mexico</a>
+                                <a href="/petAdoption?state=New_York" class="btn btn-light btn-sm mx-3">New York</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petAdoption?state=North_Carolina" class="btn btn-light btn-sm mx-3">North
+                                    Carolina</a>
+                                <a href="/petAdoption?state=North Dakota" class="btn btn-light btn-sm mx-3">North
+                                    Dakota</a>
+                                <a href="/petAdoption?state=Ohio" class="btn btn-light btn-sm mx-3">Ohio</a>
+                                <a href="/petAdoption?state=Oklahoma" class="btn btn-light btn-sm mx-3">Oklahoma</a>
+                                <a href="/petAdoption?state=Oregon" class="btn btn-light btn-sm mx-3">Oregon</a>
+                                <a href="/petAdoption?state=Pennsylvania"
+                                    class="btn btn-light btn-sm mx-3">Pennsylvania</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petAdoption?state=Rhode_Island" class="btn btn-light btn-sm mx-3">Rhode
+                                    Island</a>
+                                <a href="/petAdoption?state=South_Carolina" class="btn btn-light btn-sm mx-3">South
+                                    Carolina</a>
+                                <a href="/petAdoption?state=South_Dakota" class="btn btn-light btn-sm mx-3">South
+                                    Dakota</a>
+                                <a href="/petAdoption?state=Tennessee" class="btn btn-light btn-sm mx-3">Tennessee</a>
+                                <a href="/petAdoption?state=Texas" class="btn btn-light btn-sm mx-3">Texas</a>
+                                <a href="/petAdoption?state=Utah" class="btn btn-light btn-sm mx-3">Utah</a>
+                                <a href="/petAdoption?state=Vermont" class="btn btn-light btn-sm mx-3">Vermont</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/petAdoption?state=Virginia" class="btn btn-light btn-sm mx-3">Virginia</a>
+                                <a href="/petAdoption?state=Washington" class="btn btn-light btn-sm mx-3">Washington</a>
+                                <a href="/petAdoption?state=West_Virginia" class="btn btn-light btn-sm mx-3">West
+                                    Virginia</a>
+                                <a href="/petAdoption?state=Wisconsin" class="btn btn-light btn-sm mx-3">Wisconsin</a>
+                                <a href="/petAdoption?state=Wyoming" class="btn btn-light btn-sm mx-3">Wyoming</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%for (let petadopt of petadopts){%>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="<%=petadopt.image[0].url%>" class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5>
+                            <%= petadopt.petname%>
+                        </h5>
+                        <p class="card-text">Lived in <%= petadopt.city%>, <%=petadopt.state%><br>
+                                    <%if (petadopt.shelterName!==undefined) {%>
+                                        Now in "<%= petadopt.shelterName.shelterName%>"
+                                            <%}%>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= petadopt.description %>
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/petAdoption/<%=petadopt._id%>">View Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+            <div class="card-header text-center mb-3">
+                <p>You can search pets according to type of your pet or states.</p>
+            </div>

@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Yusei+Magic&display=swap');
+html {
+    font-size: 80%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+body{
+    height: 370vh;
+    background-image:linear-gradient(#fdfffd86, #f1faee);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 3.5rem;
+    background-color: #8ecae6;
+    position: fixed;
+    top: -8rem;
+    padding: 3rem;
+    z-index: 10;
+  }
+
+.nav-link {
+    padding: 2.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 3rem;
+    font-family: 'Yusei Magic', sans-serif;
+    color: #f1faee;
+    margin-left: 1rem;
+    border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover{
+    color: #f1faee;
+    border-bottom-color:#f1faee;
+}
+
+.nav-link.active {
+    color: #f1faee;
+    border-bottom-color:#f1faee;
+}
+
+.navbar{
+    background-color: #1d3557;
+}
+
+.navbar-brand{
+    color:#f1faee;
+    font-size: 2.5rem;
+    font-weight: 3rem;
+    font-family: 'Yusei Magic', sans-serif;
+}
+/* End of Navbar */
+
+/* Section 1 */
+.section-1 {
+    width: 100%;
+    height: 55vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url("https://images.unsplash.com/photo-1578133559556-9e83af5fc5f3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+  }
+  
+  .section-heading-1{
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: 900;
+    font-family:'Yusei Magic', sans-serif;
+    color: #1d3557;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: 0.5rem 0.5rem 0.5rem #457b9d;
+  }
+
+  .banner {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+  
+  .banner-heading {
+    background-color: #a8dadca2;
+    height: 7rem;
+    margin-bottom: 1.5rem;
+    perspective: 50rem;
+    overflow: hidden;
+  }
+  
+  .banner-heading span {
+    font-family: "Oswald", sans-serif;
+    font-size: 5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #f1faee;
+    text-shadow: 0.3rem 0.3rem 0.6rem #1d3557a4;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: translateZ(8rem);
+    opacity: 0;
+    letter-spacing: 3rem;
+  }
+  
+  .heading-1 {
+    animation: animateHeading 12s 3s infinite;
+  }
+  
+  .heading-2 {
+    animation: animateHeading 12s 6s infinite;
+  }
+  
+   .heading-3 {
+    animation: animateHeading 12s 9s infinite;
+  }
+  
+  .heading-4 {
+    animation: animateHeading 12s 12s infinite;
+  }
+    
+  
+  @keyframes animateHeading {
+    0% {
+      transform: translateZ(8rem);
+      opacity: 0;
+      letter-spacing: 3rem;
+    }
+  
+    5% {
+      transform: translateZ(0);
+      opacity: 1;
+      letter-spacing: 1.5rem;
+    }
+  
+    25% {
+      transform: translateZ(0);
+      opacity: 1;
+      letter-spacing: 1.5rem;
+    }
+  
+    28% {
+      transform: translateZ(8rem);
+      opacity: 0;
+      letter-spacing: 3rem;
+    }
+  
+    100% {
+      transform: translateZ(8rem);
+      opacity: 0;
+      letter-spacing: 3rem;
+    }
+  }
+  
+  @keyframes fadeAnimation {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  .banner-btn {
+    width: 10rem;
+    height: 3rem;
+    background: linear-gradient(to right, #ffba08, #ffd166, #ffba08);
+    color: #f1faee;
+    font-size: 1.5rem;
+    font-family: 'Yusei Magic', sans-serif;
+    text-transform: uppercase;
+    border-radius: 3rem;
+    border: 0.1rem solid #000000;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    overflow: hidden;
+    animation: fadeAnimation 1s 2s forwards;
+  }
+  
+  .banner-btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #fff, transparent);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transform: skewX(-30deg);
+    transition: left 0.5s;
+  }
+  
+  .banner-btn:hover::before {
+    left: 100%;
+  }
+
+  .banner-paragraph {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #1d3557;
+    background-color: #ffe250;
+    text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.24);
+    width: 80%;
+    margin: 0 auto 3rem auto;
+    padding: 1rem 0;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeAnimation 1s 1.5s forwards;
+  }
+/* End of Section 1 */
+
+/* Section 2*/
+.section-2 {
+    width: 100%;
+    height: 80vh;
+    background-color: #a8dadc;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+    font-family: "Oswald", sans-serif;
+  }
+
+ .card-img-top{
+      height: 280px;
+      width: 100px;
+  }
+
+  .section-heading-2{
+    margin-top: 1rem;
+    font-size: 3rem;
+    font-weight: 900;
+    font-family:'Yusei Magic', sans-serif;
+    color: #1d3557;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: 0.5rem 0.5rem 0.5rem #457b9d;
+  }
+
+  .link-btn{
+    width: 18rem;
+    height: 3rem;
+    background: linear-gradient(to right, #a8dadc, #caf0f8, #a8dadc);
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    border-radius: 3rem;
+    border: 0.1rem solid #000000;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    overflow: hidden;
+    animation: fadeAnimation 1s 2s forwards;
+  }
+/* End of Section 2*/
+
+/* Section 3*/
+.section-3 {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: #f4f1de;
+    padding: 0 1rem;
+    position: relative;
+    font-family: "Oswald", sans-serif;
+  }
+
+  .adoptpet{
+    width: 120%;
+    height: 75vh;
+  }
+/* End of Section 3*/
+
+/* Section 4*/
+.section-4 {
+    width: 100%;
+    height: 120vh;
+    background-color: #a8dadc;
+    display: flex;
+    align-items: center;
+    padding: 0 5rem;
+    position: relative;
+    font-family: "Oswald", sans-serif;
+  }
+    .shelter{
+        width: 120%;
+        height: 105vh;
+    }
+
+/* End of Section 4*/
+
+/* Section 5 */
+.section-5 {
+    width: 100%;
+    height: 45vh;
+    background-color: #f1faee;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  
+  .contact-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-details {
+    display: flex;
+  }
+  
+  .contact-details div {
+    width: 15rem;
+    text-align: center;
+  }
+  
+  .contact-details i {
+    font-size: 5rem;
+    color: #89d7eb;
+  }
+  
+  .contact-details h3 {
+    font-size: 1.5rem;
+    margin: 2rem 1rem;
+    color: black;
+  }
+  
+  .contact-details p {
+    font-size: 1rem;
+    margin: 2rem 0;
+    color: black;
+  }
+  
+  .contact-wrapper h1 {
+    font-size: 2rem;
+    color: #89d7eb;
+    text-transform: uppercase;
+  }
+/* End of Section 5*/
+
+/* Footer */
+.footer {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10rem;
+  }
+/*End of Footer*/

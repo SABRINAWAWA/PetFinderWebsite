@@ -1,0 +1,37 @@
+Phrase 1: Basic CRUD 
+1. Create package.json using 'npm init -y'
+2. Install express, ejs, mongoose, and method-override
+3. Require above API in app.js, set view engine, and connect to mongoose
+4. Set up PetSchema and import it to app.js
+5. Set up home page
+6. Set up index page: display all lost pets
+7. Set up new page: add a new lost pet to the pet database
+8. Set up edit page: users can edit their posted pet information
+9. Set up a seed file and create 20 lost pet items and store these in the Pet database
+10. TEST!
+
+Phrase 2: Basic View Style
+1. Install ejs-mate => allow us to create boilplate, which can be used in the alll views files
+2. Require ejs-mate in the app.js and set up view engine
+3. Sort general pattern in the boilerplate.ejs, leave only body section on views
+4. Design UI of each page in the views
+5. Making all elements of pet DB required(required: true), then make sure that users have to submit these elements before create a new pet item in the DB.
+    (1) One way to do it is to add 'required' to each input in the form, so the server will handle the validations
+    (2) Another way is to use validations script that bootstrap provides. We need to add novalidate to the form to tell web server no to validate our form and then change 
+        the class of form to 'validated-form'. 
+6. TEST!
+
+Phrase 3: Error Handlers
+1. 
+
+    <!-- <% for(let comment of shelter.comment) { %>
+                        <div class="card mb-3 ">
+                            <div class="card-body">
+                                <h5 class="card-title">Rating: <%= comment.rating %></h5>
+                                <p class="card-text">Comment: <%= comment.body %></p>
+                                <form action="/petfinder/shelter/<%=shelter._id%>/comment/<%=comment._id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                        <% } %> -->
