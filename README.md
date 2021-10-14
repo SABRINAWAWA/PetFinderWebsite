@@ -1,5 +1,4 @@
-# [PetFinderWebsite](https://mysterious-plateau-38458.herokuapp.com/)
-### Click above title to the website application, which is deployed in Heroku.
+# [PetFinderWebsite]
 ### Check out all codes in 'master' branch (Github)
 # Website Feature Walkthrough
 # 1. Home Page
